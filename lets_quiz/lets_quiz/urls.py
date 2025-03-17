@@ -13,22 +13,25 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+
 from django.contrib import admin
-from quiz import views as quiz_views
 from django.conf.urls import handler404, handler500
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import re_path, path ,include
+from quiz import views as quiz_views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('quiz.urls')),
+    path('admin/', admin.site.urls),
+    path('', include('quiz.urls')),
 ]
-
 
 handler404 = quiz_views.error_404
 handler500 = quiz_views.error_500
 
+
+handler404 = 'quiz.views.error_404'
+handler500 = 'quiz.views.error_500'
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
