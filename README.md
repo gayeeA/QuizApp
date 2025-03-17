@@ -1,5 +1,7 @@
 # Let's Quiz
 
+![alt text](image.png)
+
 ## Current Features
 
 ### Site access features:
@@ -48,6 +50,16 @@ cd lets_quiz
 
 ### 2. Install [Pipenv](https://pipenv.pypa.io/en/latest/)
 
+#### ( or )
+
+### Install pipenv:
+
+Open your terminal and install pipenv using pip:
+
+```bash
+pip install pipenv
+```
+
 ### 3. Create the virtualenv
 
 ```bash
@@ -61,25 +73,41 @@ pipenv shell
 pip install -r requirements.txt
 ```
 
-### 5. Setup the database
+### 5. Install crispy-forms:
+
+```bash
+pip install crispy-forms
+```
+
+### 6. Install the django-model-utils package:
+
+```bash
+pip install django-model-utils
+```
+
+### 7. Setup the database
 
 _TODO - Add instructions for this when I start using MySQL database._
 
-### 6. Run database migrations
+### 8. Run database migrations
 
 ```bash
 cd lets_quiz
 python manage.py migrate
 ```
 
-### 7. Create superuser
+### 9. Create superuser
 
 ```bash
 python manage.py createsuperuser
 ```
 
-### 8. Run development server
+### 10. Run development server
 
 ```bash
 python manage.py runserver
 ```
+
+#### issues
+
+if you are facing any issues in sign up add the user through the admin aftercreating the supeuser
